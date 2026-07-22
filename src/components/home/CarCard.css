@@ -1,0 +1,240 @@
+.car-card {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #000;
+}
+
+.car-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.car-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Overlay */
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.82) 0%,
+    rgba(0, 0, 0, 0.30) 45%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+}
+
+.overlay.dark {
+  background: rgba(35, 35, 35, 0.85);
+}
+
+/* Content */
+
+.car-content {
+  position: absolute;
+  inset: 0;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.price {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.bottom-content h3 {
+  color: #fff;
+  font-size: 48px;
+  line-height: 1;
+  margin-bottom: 24px;
+  font-weight: 700;
+}
+
+.bottom-buttons {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Buttons */
+
+.rent-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #222;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.rent-btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+.miles-pill {
+  padding: 13px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 999px;
+  color: #fff;
+  font-size: 15px;
+  backdrop-filter: blur(8px);
+}
+
+/* All Cars Card */
+
+.all-cars-card {
+  background: #3b3b36;
+}
+
+.all-cars-card img {
+  width: 68%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -58%);
+  object-fit: contain;
+}
+
+.all-cars-card:hover img {
+  transform: translate(-50%, -58%) scale(1.04);
+}
+
+.all-cars-content {
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+}
+
+/* Laptop */
+
+@media (max-width: 1200px) {
+  .car-card {
+    height: 450px;
+  }
+
+  .bottom-content h3 {
+    font-size: 40px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .car-card {
+    height: 400px;
+  }
+
+  .car-content {
+    padding: 24px;
+  }
+
+  .price {
+    font-size: 18px;
+  }
+
+  .bottom-content h3 {
+    font-size: 34px;
+    margin-bottom: 18px;
+  }
+
+  .rent-btn {
+    padding: 12px 22px;
+    font-size: 14px;
+  }
+
+  .miles-pill {
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .car-card {
+    height: 330px;
+  }
+
+  .car-content {
+    padding: 18px;
+  }
+
+  .price {
+    font-size: 16px;
+  }
+
+  .bottom-content h3 {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+
+  .bottom-buttons {
+    gap: 10px;
+  }
+
+  .rent-btn,
+  .miles-pill {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+
+  .all-cars-content {
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+  }
+
+  .all-cars-card img {
+    width: 75%;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .car-card {
+    height: 290px;
+  }
+
+  .price {
+    font-size: 15px;
+  }
+
+  .bottom-content h3 {
+    font-size: 22px;
+  }
+
+  .rent-btn,
+  .miles-pill {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .bottom-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}

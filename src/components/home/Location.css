@@ -1,0 +1,142 @@
+.location-section {
+  width: 100%;
+  background: #f8f5ef;
+  padding: 100px 0;
+}
+
+.location-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+/* ================= HEADER ================= */
+
+.location-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 80px;
+  margin-bottom: 50px;
+}
+
+.location-header h2 {
+  font-size: clamp(3.8rem, 6vw, 6rem);
+  font-weight: 700;
+  line-height: 0.95;
+  color: #222;
+  margin: 0;
+}
+
+.location-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.location-info h3 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: #222;
+}
+
+.location-info p {
+  margin: 14px 0 34px;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.location-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 36px;
+  border: 1px solid #222;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.location-btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* ================= MAP ================= */
+
+.location-map {
+  overflow: hidden;
+  border-radius: 6px;
+}
+
+.location-map img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+  .location-container {
+    padding: 0 30px;
+  }
+
+  .location-header {
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 35px;
+  }
+
+  .location-info h3 {
+    font-size: 30px;
+  }
+
+  .location-info p {
+    font-size: 18px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+  .location-section {
+    padding: 70px 0;
+  }
+
+  .location-container {
+    padding: 0 20px;
+  }
+
+  .location-header h2 {
+    font-size: 58px;
+  }
+
+  .location-info {
+    width: 100%;
+  }
+
+  .location-info h3 {
+    font-size: 28px;
+  }
+
+  .location-info p {
+    font-size: 17px;
+    margin-bottom: 25px;
+  }
+
+  .location-btn {
+    width: 100%;
+    padding: 16px;
+    text-align: center;
+  }
+
+  .location-map {
+    border-radius: 4px;
+  }
+}

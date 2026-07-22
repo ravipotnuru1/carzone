@@ -1,0 +1,178 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 30px;
+  padding: 45px;
+}
+
+.close-modal {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 30px;
+  color: #888;
+}
+
+.modal-content h2 {
+  font-size: 64px;
+  line-height: 0.9;
+  color: #222;
+  margin-bottom: 45px;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 10px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #bbb;
+  padding: 12px 0;
+  font-size: 16px;
+  outline: none;
+  background: transparent;
+  resize: none;
+}
+
+.full-width {
+  margin-bottom: 35px;
+}
+
+.form-bottom {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.submit-modal-btn {
+  border: none;
+  background: #34342d;
+  color: #fff;
+  padding: 16px 42px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-modal-btn:hover {
+  background: #1f1f1b;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+.checkbox input {
+  width: 18px;
+  height: 18px;
+}
+
+/* Tablet */
+
+@media (max-width: 992px) {
+  .modal-content {
+    max-width: 700px;
+    padding: 35px;
+  }
+
+  .modal-content h2 {
+    font-size: 52px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 30px;
+    border-radius: 22px;
+  }
+
+  .close-modal {
+    top: 18px;
+    right: 18px;
+    font-size: 28px;
+  }
+
+  .modal-content h2 {
+    font-size: 48px;
+    margin-bottom: 35px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .form-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .submit-modal-btn {
+    width: 100%;
+  }
+
+  .checkbox {
+    margin-top: 5px;
+  }
+}
+
+/* Small Mobile */
+
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 24px;
+  }
+
+  .modal-content h2 {
+    font-size: 42px;
+  }
+
+  .submit-modal-btn {
+    padding: 16px;
+  }
+}

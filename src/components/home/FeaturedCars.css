@@ -1,0 +1,68 @@
+.featured-cars {
+  width: 100%;
+  padding: 60px 20px;
+  background: #ffffff;
+}
+
+.featured-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.cars-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.car-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Large Desktop */
+@media (min-width: 1400px) {
+  .featured-container {
+    max-width: 1500px;
+  }
+
+  .cars-grid {
+    gap: 24px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .featured-cars {
+    padding: 50px 20px;
+  }
+
+  .cars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .featured-cars {
+    padding: 30px 16px;
+  }
+
+  .cars-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .featured-cars {
+    padding: 24px 12px;
+  }
+
+  .cars-grid {
+    gap: 14px;
+  }
+}

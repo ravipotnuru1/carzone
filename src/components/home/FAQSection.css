@@ -1,0 +1,151 @@
+.faq-section {
+  width: 100%;
+  background: #f8f5ef;
+  padding: 100px 0;
+}
+
+.faq-container {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 70px;
+}
+
+/* ================= LEFT ================= */
+
+.faq-left h2 {
+  font-size: clamp(3.5rem, 6vw, 5.8rem);
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 50px;
+  line-height: 1;
+}
+
+.faq-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border: 1px solid #222;
+  border-radius: 999px;
+  text-decoration: none;
+  color: #222;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all .3s ease;
+}
+
+.faq-btn:hover {
+  background: #222;
+  color: #fff;
+}
+
+/* ================= RIGHT ================= */
+
+.faq-right {
+  width: 100%;
+}
+
+.faq-item {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 28px 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.faq-question span {
+  font-size: 24px;
+  font-weight: 600;
+  color: #222;
+  line-height: 1.4;
+  max-width: 90%;
+}
+
+.faq-question svg {
+  font-size: 32px;
+  color: #222;
+  flex-shrink: 0;
+}
+
+.faq-answer {
+  padding: 0 0 28px;
+}
+
+.faq-answer p {
+  max-width: 700px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: #666;
+  margin: 0;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 992px) {
+
+  .faq-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
+    padding: 0 30px;
+  }
+
+  .faq-left h2 {
+    margin-bottom: 25px;
+  }
+
+  .faq-question span {
+    font-size: 20px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 768px) {
+
+  .faq-section {
+    padding: 70px 0;
+  }
+
+  .faq-container {
+    padding: 0 20px;
+    gap: 35px;
+  }
+
+  .faq-left h2 {
+    font-size: 58px;
+  }
+
+  .faq-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .faq-question {
+    padding: 20px 0;
+  }
+
+  .faq-question span {
+    font-size: 18px;
+    max-width: 85%;
+  }
+
+  .faq-question svg {
+    font-size: 24px;
+  }
+
+  .faq-answer p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+}

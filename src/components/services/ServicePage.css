@@ -1,0 +1,193 @@
+.services-page {
+  width: 100%;
+  background: #f8f5ef;
+  padding: 50px 0 80px;
+}
+
+.services-container {
+  width: 95%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.services-header h1 {
+  font-size: 110px;
+  font-weight: 700;
+  line-height: 0.9;
+  color: #1d1d1d;
+}
+
+.services-btn {
+  background: #2c2c28;
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 18px 36px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.services-btn:hover {
+  background: #000;
+}
+
+/* Grid */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Card */
+
+.service-card {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.service-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.service-card:hover img {
+  transform: scale(1.05);
+}
+
+.service-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.65),
+    rgba(0,0,0,.15),
+    transparent
+  );
+}
+
+.service-overlay h3 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: .5px;
+}
+
+/* Laptop */
+
+@media (max-width:1200px){
+
+.services-header h1{
+font-size:90px;
+}
+
+.service-card{
+height:460px;
+}
+
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+.services-header{
+flex-direction:column;
+align-items:flex-start;
+gap:24px;
+}
+
+.services-header h1{
+font-size:72px;
+}
+
+.services-grid{
+grid-template-columns:repeat(2,1fr);
+}
+
+.service-card{
+height:420px;
+}
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+.services-page{
+padding:30px 0 50px;
+}
+
+.services-container{
+width:92%;
+}
+
+.services-header{
+margin-bottom:30px;
+}
+
+.services-header h1{
+font-size:58px;
+}
+
+.services-btn{
+width:100%;
+padding:16px;
+}
+
+.services-grid{
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.service-card{
+height:360px;
+}
+
+.service-overlay{
+padding:18px;
+}
+
+.service-overlay h3{
+font-size:16px;
+}
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+.services-header h1{
+font-size:48px;
+}
+
+.service-card{
+height:320px;
+}
+
+.service-overlay h3{
+font-size:15px;
+}
+
+}
