@@ -1,4 +1,5 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
@@ -10,22 +11,112 @@ import Shipping from "./pages/Shipping";
 import Warranty from "./pages/Warranty";
 import Financing from "./pages/Financing";
 
-// Temporary pages
+const PageTransition = ({ children }) => (
+  <motion.div
+    initial={{ opacity: 0, y: 25 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -25 }}
+    transition={{ duration: 0.45 }}
+  >
+    {children}
+  </motion.div>
+);
+
+function AnimatedRoutes() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageTransition>
+              <Home />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/cars"
+          element={
+            <PageTransition>
+              <Cars />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/cars/:id"
+          element={
+            <PageTransition>
+              <CarDetails />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/about"
+          element={
+            <PageTransition>
+              <About />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/services"
+          element={
+            <PageTransition>
+              <Services />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/contact"
+          element={
+            <PageTransition>
+              <Contact />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/services/shipping"
+          element={
+            <PageTransition>
+              <Shipping />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/services/warranty"
+          element={
+            <PageTransition>
+              <Warranty />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/services/financing"
+          element={
+            <PageTransition>
+              <Financing />
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+}
 
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/cars" element={<Cars />} />
-        <Route path="/cars/:id" element={<CarDetails />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/services/shipping" element={<Shipping />} />
-        <Route path="/services/warranty" element={<Warranty />} />
-        <Route path="/services/financing" element= {<Financing/>}/>
-      </Routes>
+      <AnimatedRoutes />
     </BrowserRouter>
   );
 }

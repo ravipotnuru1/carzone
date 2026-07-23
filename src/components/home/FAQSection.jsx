@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import { FiPlus, FiMinus, FiArrowUpRight } from "react-icons/fi";
 import "./FAQSection.css";
 
@@ -39,49 +40,83 @@ const FAQSection = () => {
   };
 
   return (
-    <section className="faq-section">
+    <motion.section
+      className="faq-section"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7 }}
+    >
       <div className="faq-container">
 
-        <div className="faq-left">
+        <motion.div
+          className="faq-left"
+          initial={{ opacity: 0, x: -40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <h2>FAQ</h2>
 
-          <Link to="/contact" className="faq-btn">
-            Ask a Question
-            <FiArrowUpRight />
-          </Link>
-        </div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Link to="/contact" className="faq-btn">
+              Ask a Question
+              <FiArrowUpRight />
+            </Link>
+          </motion.div>
+        </motion.div>
 
-        <div className="faq-right">
-
+        <motion.div
+          className="faq-right"
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
           {faqData.map((item, index) => (
-            <div className="faq-item" key={index}>
-
+            <motion.div
+              className="faq-item"
+              key={index}
+              whileHover={{ y: -2 }}
+            >
               <button
                 className="faq-question"
                 onClick={() => toggleFAQ(index)}
               >
                 <span>{item.question}</span>
 
-                {active === index ? (
-                  <FiMinus />
-                ) : (
-                  <FiPlus />
-                )}
+                <motion.span
+                  animate={{ rotate: active === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {active === index ? <FiMinus /> : <FiPlus />}
+                </motion.span>
               </button>
 
-              {active === index && (
-                <div className="faq-answer">
-                  <p>{item.answer}</p>
-                </div>
-              )}
+              <AnimatePresence>
+                {active === index && (
+                  <motion.div
+                    className="faq-answer"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.35 }}
+                    style={{ overflow: "hidden" }}
+                  >
+                    <p>{item.answer}</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
-            </div>
+            </motion.div>
           ))}
-
-        </div>
+        </motion.div>
 
       </div>
-    </section>
+    </motion.section>
   );
 };
 

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import shippingImg from "../../assets/images/services/service-shipping.png";
 import warrantyImg from "../../assets/images/services/service-warranty.png";
 import financingImg from "../../assets/images/services/service-financing.png";
@@ -25,37 +26,79 @@ const services = [
   },
 ];
 
+const containerVariants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  },
+};
+
 const Services = () => {
   return (
     <section className="services-section">
       <div className="services-container">
 
-        <div className="services-header">
+        <motion.div
+          className="services-header"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
           <h2>Services</h2>
 
           <Link to="/contact" className="services-btn">
             Submit your application
           </Link>
-        </div>
+        </motion.div>
 
-        <div className="services-grid">
+        <motion.div
+          className="services-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
           {services.map((service) => (
-            <Link
+            <motion.div
               key={service.id}
-              to={service.path}
-              className="service-card"
+              variants={cardVariants}
+              whileHover={{ y: -10 }}
+              transition={{ duration: 0.3 }}
             >
-              <img
-                src={service.image}
-                alt={service.title}
-              />
+              <Link
+                to={service.path}
+                className="service-card"
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                />
 
-              <div className="service-overlay">
-                <h3>{service.title}</h3>
-              </div>
-            </Link>
+                <div className="service-overlay">
+                  <h3>{service.title}</h3>
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
       </div>
     </section>

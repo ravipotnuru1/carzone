@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import aboutClassicCar from "../../assets/images/about/about-classic-car.png";
 import "./AboutSection.css";
 
@@ -7,8 +8,13 @@ const AboutSection = () => {
       <div className="about-container">
 
         {/* Top Content */}
-        <div className="about-header">
-
+        <motion.div
+          className="about-header"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.8 }}
+        >
           <h2 className="about-title">
             About us
             <br />
@@ -21,39 +27,60 @@ const AboutSection = () => {
             style. Elevate your journey with our passion for preserving
             automotive heritage.
           </p>
-
-        </div>
+        </motion.div>
 
         {/* Statistics */}
-        <div className="about-stats">
-
-          <div className="stat-circle">
+        <motion.div
+          className="about-stats"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2, duration: 0.8 }}
+        >
+          <motion.div
+            className="stat-circle"
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.3 }}
+          >
             <h3>32</h3>
             <p>Retro car</p>
-          </div>
+          </motion.div>
 
-          <div className="stat-circle">
+          <motion.div
+            className="stat-circle"
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.3 }}
+          >
             <h3>400</h3>
             <p>Satisfied clients</p>
-          </div>
+          </motion.div>
 
-          <div className="stat-circle">
+          <motion.div
+            className="stat-circle"
+            whileHover={{ scale: 1.08 }}
+            transition={{ duration: 0.3 }}
+          >
             <h3>
               5 <span>Years</span>
             </h3>
             <p>Delighting our clients</p>
-          </div>
-
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Car Image */}
-
-        <div className="about-image">
+        <motion.div
+          className="about-image"
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          whileHover={{ scale: 1.02 }}
+        >
           <img
             src={aboutClassicCar}
             alt="Classic Vintage Car"
           />
-        </div>
+        </motion.div>
 
       </div>
     </section>

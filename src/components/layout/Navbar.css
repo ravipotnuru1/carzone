@@ -10,6 +10,14 @@
   z-index: 999;
   background: #f8f5ef;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(248, 245, 239, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .navbar-container {
@@ -29,11 +37,12 @@
   font-size: 26px;
   font-weight: 700;
   letter-spacing: 0.5px;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .logo:hover {
   color: #c78c2b;
+  transform: translateY(-1px);
 }
 
 .nav-links {
@@ -47,8 +56,8 @@
   color: #222;
   font-size: 17px;
   font-weight: 500;
-  transition: 0.3s;
   position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-links a:hover,
@@ -64,7 +73,7 @@
   width: 0;
   height: 2px;
   background: #c78c2b;
-  transition: 0.3s;
+  transition: width 0.3s ease;
 }
 
 .nav-links a:hover::after,
@@ -77,11 +86,12 @@
   color: #111;
   font-size: 17px;
   font-weight: 600;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .phone:hover {
   color: #c78c2b;
+  transform: translateY(-2px);
 }
 
 .menu-btn {
@@ -91,6 +101,11 @@
   font-size: 34px;
   color: #111;
   cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.menu-btn:hover {
+  transform: rotate(90deg);
 }
 
 /* =========================
@@ -140,14 +155,16 @@
     top: 74px;
     left: 0;
     width: 100%;
-    background: #f8f5ef;
+    background: rgba(248, 245, 239, 0.97);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     flex-direction: column;
     gap: 24px;
     padding: 30px 0;
     border-top: 1px solid rgba(0,0,0,0.08);
 
     transform: translateY(-150%);
-    transition: .35s ease;
+    transition: 0.35s ease;
   }
 
   .nav-links.active {
