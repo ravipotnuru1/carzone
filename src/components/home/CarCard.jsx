@@ -57,6 +57,7 @@ const CarCard = ({ car, isLastCard = false }) => {
             </button>
 
             <span className="miles-pill">
+              14,900 miles
             </span>
 
           </div>
