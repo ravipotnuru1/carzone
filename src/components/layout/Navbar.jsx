@@ -20,6 +20,13 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = [
+    { path: "/cars", label: "Cars" },
+    { path: "/about", label: "About Us" },
+    { path: "/services", label: "Services" },
+    { path: "/contact", label: "Contacts" },
+  ];
+
   return (
     <motion.header
       className={`navbar ${scrolled ? "scrolled" : ""}`}
@@ -39,28 +46,23 @@ const Navbar = () => {
           </NavLink>
         </motion.div>
 
-        <motion.nav
-          className={`nav-links ${menuOpen ? "active" : ""}`}
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-        >
-          <NavLink to="/cars" onClick={closeMenu}>
-            Cars
-          </NavLink>
-
-          <NavLink to="/about" onClick={closeMenu}>
-            About Us
-          </NavLink>
-
-          <NavLink to="/services" onClick={closeMenu}>
-            Services
-          </NavLink>
-
-          <NavLink to="/contact" onClick={closeMenu}>
-            Contacts
-          </NavLink>
-        </motion.nav>
+        <nav className={`nav-links ${menuOpen ? "active" : ""}`}>
+          {navItems.map((item, index) => (
+            <motion.div
+              key={item.path}
+              initial={{ opacity: 0, y: -15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.3 + index * 0.1,
+                duration: 0.4,
+              }}
+            >
+              <NavLink to={item.path} onClick={closeMenu}>
+                {item.label}
+              </NavLink>
+            </motion.div>
+          ))}
+        </nav>
 
         <motion.a
           href="tel:+123467578288"
