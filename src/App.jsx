@@ -11,6 +11,10 @@ import Shipping from "./pages/Shipping";
 import Warranty from "./pages/Warranty";
 import Financing from "./pages/Financing";
 
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
+
 const PageTransition = ({ children }) => (
   <motion.div
     initial={{ opacity: 0, y: 25 }}
@@ -28,8 +32,19 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
+        {/* Default Login Page */}
         <Route
           path="/"
+          element={
+            <PageTransition>
+              <Login />
+            </PageTransition>
+          }
+        />
+
+        {/* Home */}
+        <Route
+          path="/home"
           element={
             <PageTransition>
               <Home />
@@ -37,6 +52,7 @@ function AnimatedRoutes() {
           }
         />
 
+        {/* Cars */}
         <Route
           path="/cars"
           element={
@@ -55,6 +71,7 @@ function AnimatedRoutes() {
           }
         />
 
+        {/* About */}
         <Route
           path="/about"
           element={
@@ -64,20 +81,12 @@ function AnimatedRoutes() {
           }
         />
 
+        {/* Services */}
         <Route
           path="/services"
           element={
             <PageTransition>
               <Services />
-            </PageTransition>
-          }
-        />
-
-        <Route
-          path="/contact"
-          element={
-            <PageTransition>
-              <Contact />
             </PageTransition>
           }
         />
@@ -105,6 +114,44 @@ function AnimatedRoutes() {
           element={
             <PageTransition>
               <Financing />
+            </PageTransition>
+          }
+        />
+
+        {/* Contact */}
+        <Route
+          path="/contact"
+          element={
+            <PageTransition>
+              <Contact />
+            </PageTransition>
+          }
+        />
+
+        {/* Authentication */}
+        <Route
+          path="/login"
+          element={
+            <PageTransition>
+              <Login />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/register"
+          element={
+            <PageTransition>
+              <Register />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/forgot-password"
+          element={
+            <PageTransition>
+              <ForgotPassword />
             </PageTransition>
           }
         />

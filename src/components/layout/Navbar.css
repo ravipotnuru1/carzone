@@ -81,6 +81,16 @@
   width: 100%;
 }
 
+/* =========================
+   RIGHT SECTION
+========================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 .phone {
   text-decoration: none;
   color: #111;
@@ -92,6 +102,38 @@
 .phone:hover {
   color: #c78c2b;
   transform: translateY(-2px);
+}
+
+.login-btn-nav {
+  text-decoration: none;
+  background: #c78c2b;
+  color: #fff;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.login-btn-nav:hover {
+  background: #b67a1e;
+}
+
+/* Updated Logout Icon */
+
+.logout-icon {
+  color: #111;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-icon:hover {
+  color: #c78c2b;
+  transform: scale(1.15);
 }
 
 .menu-btn {
@@ -127,7 +169,11 @@
   }
 
   .phone {
-    font-size: 15px;
+    display: none;
+  }
+
+  .navbar-actions {
+    gap: 14px;
   }
 }
 
@@ -144,10 +190,6 @@
 
   .menu-btn {
     display: block;
-  }
-
-  .phone {
-    display: none;
   }
 
   .nav-links {
@@ -179,5 +221,9 @@
     font-size: 20px;
     max-width: 210px;
     line-height: 1.3;
+  }
+
+  .navbar-actions {
+    display: none;
   }
 }
