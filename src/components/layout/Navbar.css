@@ -119,8 +119,6 @@
   background: #b67a1e;
 }
 
-/* Updated Logout Icon */
-
 .logout-icon {
   color: #111;
   font-size: 32px;
@@ -223,7 +221,26 @@
     line-height: 1.3;
   }
 
+  /* Mobile Right Section */
+
   .navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .phone {
     display: none;
+  }
+
+  .login-btn-nav {
+    display: none;
+  }
+
+  .logout-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
   }
 }
