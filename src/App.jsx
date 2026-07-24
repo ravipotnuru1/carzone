@@ -12,8 +12,6 @@ import Warranty from "./pages/Warranty";
 import Financing from "./pages/Financing";
 
 import Login from "./pages/Login";
-import Register from "./pages/Register";
-import ForgotPassword from "./pages/ForgotPassword";
 
 const PageTransition = ({ children }) => (
   <motion.div
@@ -32,9 +30,19 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        {/* Default Login Page */}
+
+        {/* Landing / Authentication */}
         <Route
           path="/"
+          element={
+            <PageTransition>
+              <Login />
+            </PageTransition>
+          }
+        />
+
+        <Route
+          path="/login"
           element={
             <PageTransition>
               <Login />
@@ -128,33 +136,6 @@ function AnimatedRoutes() {
           }
         />
 
-        {/* Authentication */}
-        <Route
-          path="/login"
-          element={
-            <PageTransition>
-              <Login />
-            </PageTransition>
-          }
-        />
-
-        <Route
-          path="/register"
-          element={
-            <PageTransition>
-              <Register />
-            </PageTransition>
-          }
-        />
-
-        <Route
-          path="/forgot-password"
-          element={
-            <PageTransition>
-              <ForgotPassword />
-            </PageTransition>
-          }
-        />
       </Routes>
     </AnimatePresence>
   );
